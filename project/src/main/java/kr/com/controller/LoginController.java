@@ -34,6 +34,11 @@ public class LoginController {
 	
 	@RequestMapping(value = "/")
 	public String home(Locale locale, Model model) {
+		return "home";
+	}
+	
+	@RequestMapping(value = "/main")
+	public String main(Locale locale, Model model) {
 		return "main";
 	}
 	
@@ -54,7 +59,8 @@ public class LoginController {
 			out.println("<script>alert('비밀번호가 일치하지 않습니다.'); location.href='http://localhost:9090/';</script>");
 			out.flush();
 		}else {
-			tt = "main";
+			model.addAttribute("userDate",check);
+			tt = "home";
 		}
 		return tt;
 	}
