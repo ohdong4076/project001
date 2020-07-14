@@ -21,4 +21,72 @@
 	           AND PASSWORD = #{pw}
      		 ]]>
     </select>
+    
+    <select id="userInfo" resultType="map" parameterType="map">
+	        SELECT A.SEQ
+	        	 , A.ID
+	             , A.PASSWORD
+	             , A.NAME
+	             , B.CODE_NM
+	          FROM ODH_MEMBER A
+	             , ODH_CODE B
+	         WHERE 1 = 1
+	           AND A.CODE = B.CODE
+	         <![CDATA[
+	           AND A.ID = #{id}
+	           AND A.PASSWORD = #{pw}
+	           AND B.CODE_NUM = '0001'
+     		 ]]>
+    </select>
+    
+    <select id="listBoard" resultType="map" parameterType="map">
+	        SELECT A.LIST_NUM
+	        	 , A.NAME
+	             , A.SUBJECT
+	             , A.CONTENT
+	             , A.REG_DATE
+	             , A.CHO_DATE
+	             , A.CHO_NAME
+	             , A.CHO_STATE
+	             , B.CODE_NM
+	          FROM ODH_LIST A
+	             , ODH_CODE B
+	         WHERE A.CHO_STATE = B.CODE
+	           AND B.CODE_NUM = '0002'
+            <if test="name != null and name != ''">
+            <![CDATA[
+	           AND A.NAME = #{name}
+            ]]>
+            </if>
+            <if test="cho_name != null and cho_name != ''">
+            <![CDATA[
+	           AND A.CHO_NAME = #{cho_name}
+	           ]]>
+            </if>
+            <if test="subject != null and subject != ''">
+            <![CDATA[
+	           AND A.SUBJECT LIKE '%'||#{subject}||'%' 
+	           ]]>
+            </if>
+            <if test="content != null and content != ''">
+            <![CDATA[
+	           AND A.CONTENT = '%'||#{subject}||'%'
+	           ]]>
+            </if>
+            <if test="cho_state != null and cho_state != ''">
+            <![CDATA[
+	           AND A.CHO_STATE = #{cho_state}
+	           ]]>
+            </if>
+            <if test="strDate != null and strDate != ''">
+            <![CDATA[
+	           AND to_char(A.REG_DATE, 'YYYYMMDD') >= to_char(to_date(#{strDate}), 'YYYYMMDD' )
+	           ]]>
+            </if>
+            <if test="endDate != null and endDate != ''">
+            <![CDATA[
+	           AND to_char(A.REG_DATE, 'YYYYMMDD') <= to_char(to_date(#{endDate}), 'YYYYMMDD' )
+	           ]]>
+            </if>
+    </select>
 </mapper>

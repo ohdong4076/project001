@@ -1,6 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <html>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -19,7 +17,6 @@ $(document).ready(function(){
 			return;
 		}else{
 			$('#loginSubmit').submit();
-			window.location.href="/main";
 		}
 	});
 })

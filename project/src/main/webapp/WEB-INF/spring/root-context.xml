@@ -15,12 +15,9 @@
 		<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
         id="dataSource">
         <property value="oracle.jdbc.driver.OracleDriver" name="driverClassName" />
-        <property value="jdbc:oracle:thin:@localhost:1521:orcl" name="url" />
-        <property value="scott" name="username" />
-        <property value="1234" name="password" />
-<!--         <property value="jdbc:oracle:thin:@125.141.68.201:1521:XE" name="url" /> -->
-<!--         <property value="giantstudy" name="username" /> -->
-<!--         <property value="gs123" name="password" /> -->
+        <property value="jdbc:oracle:thin:@125.141.68.201:1521:XE" name="url" />
+        <property value="giantstudy" name="username" />
+        <property value="gs123" name="password" />
     </bean>
 
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="SqlSessionFactory">
