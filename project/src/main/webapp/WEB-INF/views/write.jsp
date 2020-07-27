@@ -32,6 +32,7 @@ $(document).ready(function(){
 	$("#cancel").click(function() {
 		window.history.back();
 	});
+	//test
 	
 	//게시글 이력 가져오기
 // 	$.ajax({
