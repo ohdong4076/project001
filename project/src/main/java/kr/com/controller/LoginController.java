@@ -63,7 +63,7 @@ public class LoginController {
 	}
 	
 	/**
-	 * 로그인 체크 브랜치 확인용 ㄴㅇㄻㄴㅇㄹ
+	 * 로그인 체크 수정
 	 * @throws IOException 
 	 */
 	@RequestMapping(value = "/loginCkeck", method = RequestMethod.POST, produces = "application/json")
