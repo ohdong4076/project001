@@ -62,8 +62,8 @@ public class LoginController {
 		return "redirect:/";
 	}
 	
-	/**
-	 * 로그인 체크
+ 	/**
+	 * 로그인 체크 
 	 * @throws IOException 
 	 */
 	@RequestMapping(value = "/loginCkeck", method = RequestMethod.POST, produces = "application/json")
