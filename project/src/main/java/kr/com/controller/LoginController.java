@@ -62,13 +62,8 @@ public class LoginController {
 		return "redirect:/";
 	}
 	
-<<<<<<< HEAD
 	/**
-	 * 로그인 체크 수정
-=======
- 	/**
 	 * 로그인 체크 
->>>>>>> branch 'master' of https://github.com/ohdong4076/project001.git
 	 * @throws IOException 
 	 */
 	@RequestMapping(value = "/loginCkeck", method = RequestMethod.POST, produces = "application/json")
