@@ -63,7 +63,7 @@ public class LoginController {
 	}
 	
 	/**
-	 * 로그인 체크
+	 * 로그인 체크 tekjtksjtl
 	 * @throws IOException 
 	 */
 	@RequestMapping(value = "/loginCkeck", method = RequestMethod.POST, produces = "application/json")
