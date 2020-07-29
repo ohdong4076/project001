@@ -87,7 +87,7 @@ public class LoginController {
 	}
 	
 	/**
-	 * 게시글 가져오기
+	 * 게시글 가져오기 123
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/listBoard", method = RequestMethod.GET)
